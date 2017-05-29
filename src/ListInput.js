@@ -18,13 +18,14 @@ import Sortable from 'react-drag-sort'
  */
 
 const propTypes = {
-  ItemComponent: PropTypes.func.isRequired,
-  StagingComponent: PropTypes.func.isRequired,
-  value: PropTypes.any.isRequired,
-  initialStagingValue: PropTypes.any.isRequired,
-  onChange: PropTypes.func,
-  maxItems: PropTypes.number,
-  minItems: PropTypes.number
+    ItemComponent: PropTypes.func.isRequired,
+    StagingComponent: PropTypes.func.isRequired,
+    value: PropTypes.any.isRequired,
+    initialStagingValue: PropTypes.any.isRequired,
+    className: PropTypes.string,
+    onChange: PropTypes.func,
+    maxItems: PropTypes.number,
+    minItems: PropTypes.number
 }
 
 /*
@@ -197,7 +198,7 @@ class ListInput extends React.Component {
     }
 
     return (
-      <div>
+      <div className={this.props.className}>
         { value.length < maxItems &&
           <StagingComponent
             onAdd={addFromStaging}
